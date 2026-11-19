@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Earth Vortex — Three.js WebGPU</title>
+  </head>
+  <body>
+    <div id="stage">
+      <canvas id="webgpu-canvas"></canvas>
+      <div id="topbar">
+        <div id="title">EARTH VORTEX <span>v7 · Three.js WebGPU</span></div>
+        <div id="modes">
+          <button id="btn-video" class="active" type="button">▶ Video v7</button>
+          <button id="btn-webgpu" type="button">✦ WebGPU Live</button>
+          <button id="btn-record" type="button" title="Ghi 20 giây chế độ đang chạy thành file WebM (đổi sang MP4 bằng ffmpeg)">● Ghi 20s</button>
+        </div>
+      </div>
+      <div id="notice"></div>
+      <div id="fps">— fps</div>
+      <div id="hint">Video v7: đúng clip gốc 20s 9:16 60fps 4K · WebGPU Live: cảnh 3D chạy real-time trên trình duyệt của bạn</div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

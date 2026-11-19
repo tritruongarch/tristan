@@ -1,0 +1,1 @@
+{"dependencies":{"three":"0.187.0"},"description":"Earth Vortex v7 — Three.js WebGPU: video mode (clip v7 goc) + live WebGPU remake (xoay vu tru, la phong, tan lua, bui sao, god rays)","devDependencies":{"vite":"^6.3.5"},"name":"tristan-earth-vortex","private":true,"scripts":{"build":"vite build","dev":"vite","preview":"vite preview"},"type":"module","version":"1.0.0"}
