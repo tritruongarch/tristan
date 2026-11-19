@@ -1,0 +1,136 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Locked 9:16 stage, centred, never letterboxed inside itself */
+#stage {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  height: min(100dvh, 177.78vw);
+  max-width: 100vw;
+  background: #000;
+  overflow: hidden;
+}
+
+#webgpu-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 12px 26px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#title {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+}
+
+#title span {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #ffd27a;
+  font-size: 11px;
+}
+
+#modes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  pointer-events: auto;
+}
+
+#modes button {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 13px;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+#modes button.active {
+  background: #ffd27a;
+  border-color: #ffd27a;
+  color: #111;
+}
+
+#modes button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+#notice {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  right: 12px;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(255, 210, 122, 0.5);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  display: none;
+  z-index: 3;
+}
+
+#fps {
+  position: absolute;
+  left: 10px;
+  bottom: 34px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 4px 8px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+#hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 12px 10px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.75);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+  z-index: 2;
+}
